@@ -1,0 +1,6 @@
+## Interface: 80300
+## Title: ScalebaneLoot
+## Author: Redux
+## Version: 1.0
+
+main.lua

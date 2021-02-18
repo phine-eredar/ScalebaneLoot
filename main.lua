@@ -64,5 +64,5 @@ rollFrame :SetScript("OnEvent", function(self, event, message)
   local min = tonumber(minStr)
   local max = tonumber(maxStr)
   if current == nil or roller == nil or rolls[roller] ~= nil or min ~= 1 or max < 98 or max > 100 then return; end
-  rolls[roller] = {result=result, max=max}
+  rolls[roller] = {result=tonumber(result), max=max}
 end)

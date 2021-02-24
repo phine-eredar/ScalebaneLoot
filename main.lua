@@ -60,9 +60,10 @@ end)
 local rollFrame = CreateFrame("FRAME", "ScalebaneLootRollFrame")
 rollFrame :RegisterEvent("CHAT_MSG_SYSTEM")
 rollFrame :SetScript("OnEvent", function(self, event, message)
-  local roller, result, minStr, maxStr = string.match(message, "(.+) rolls (%d+) %((%d+)-(%d+)%)")
-  local min = tonumber(minStr)
-  local max = tonumber(maxStr)
+  local roller, result, min, max = string.match(message, "(.+) rolls (%d+) %((%d+)-(%d+)%)")
+  result = tonumber(result)
+  min = tonumber(min)
+  max = tonumber(max)
   if current == nil or roller == nil or rolls[roller] ~= nil or min ~= 1 or max < 98 or max > 100 then return; end
-  rolls[roller] = {result=tonumber(result), max=max}
+  rolls[roller] = {result=result, max=max}
 end)
